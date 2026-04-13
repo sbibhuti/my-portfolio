@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
 
         <div className="h-8 w-8 overflow-hidden rounded-full bg-gray-700">
           <img
-            src="src\assets\IMG-1660.jpg"
+            src="https://proper-gray-59kjqqadtj.edgeone.app/IMG-1660.jpg"
             alt="avatar"
             className="h-full w-full object-cover"
           />
