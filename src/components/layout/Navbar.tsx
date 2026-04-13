@@ -18,10 +18,17 @@ const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme()
   const location = useLocation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const menuButtonRef = useRef<HTMLButtonElement | null>(null)
+  const lastMenuCloseAtRef = useRef(0)
 
   const closeMobileMenu = () => {
+    lastMenuCloseAtRef.current = Date.now()
     setIsMobileMenuOpen(false)
+  }
+
+  const openMobileMenu = () => {
+    // Prevent immediate re-open caused by duplicate tap/click events on mobile.
+    if (Date.now() - lastMenuCloseAtRef.current < 250) return
+    setIsMobileMenuOpen(true)
   }
 
   const handleToggle = () => {
@@ -30,13 +37,10 @@ const Navbar: React.FC = () => {
   }
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-      return
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
     }
-
-    document.body.style.overflow = ''
-    menuButtonRef.current?.focus()
   }, [isMobileMenuOpen])
 
   return (
@@ -87,7 +91,7 @@ const Navbar: React.FC = () => {
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-          <div className="hidden md:inline-flex">
+          <div className="hidden md:inline-flex gap-2">
             <Button variant="ghost" >
               Hire Me
             </Button>
@@ -103,9 +107,8 @@ const Navbar: React.FC = () => {
           </div>
 
           <button
-            ref={menuButtonRef}
             type="button"
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            onClick={isMobileMenuOpen ? closeMobileMenu : openMobileMenu}
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-menu"
@@ -129,15 +132,16 @@ const Navbar: React.FC = () => {
         />
 
         {/* Slide-down panel from top */}
-        <div className="fixed inset-0 flex items-start px-3 pt-17">
+        <div className="fixed inset-0 flex items-start px-0 pt-16">
           <Dialog.Panel
             id="mobile-nav-menu"
-            className={`bg-surface-container-low border-outline-variant max-h-[78vh] w-full overflow-y-auto rounded-2xl border px-5 pb-6 pt-5 shadow-2xl transition-all duration-300 ease-out ${isMobileMenuOpen
+            className={`bg-surface-container-low border-outline-variant max-h-[78vh] w-full overflow-y-auto rounded-b-3xl border border-t-0 px-5 pb-6 pt-5 shadow-2xl transition-all duration-300 ease-out ${isMobileMenuOpen
                 ? 'translate-y-0 opacity-100'
                 : '-translate-y-6 opacity-0'
               }`}
           >
-            <ul className="flex flex-1 list-none flex-col gap-2">
+
+            <ul className="flex flex-1 list-none flex-col gap-1 bg-surface-container-high rounded-xl p-2">
               {NAV_ITEMS.map((link) => {
                 const isActive = location.pathname === link.path
                 return (
@@ -145,9 +149,9 @@ const Navbar: React.FC = () => {
                     <Link
                       to={link.path}
                       onClick={closeMobileMenu}
-                      className={`block rounded-xl px-4 py-3 text-base uppercase font-mono font-medium transition-all duration-200 ${isActive
-                          ? 'bg-primary/15 text-on-surface'
-                          : 'text-on-surface-variant hover:bg-white/5 hover:text-on-surface'
+                      className={`block rounded-xl px-4 py-3 text-base uppercase font-mono  transition-all duration-200 ${isActive
+                          ? 'bg-primary/15 text-on-surface font-black'
+                          : 'text-on-surface-variant hover:bg-white/5 hover:text-on-surface font-medium'
                         }`}
                     >
                       {link.label}
@@ -157,9 +161,9 @@ const Navbar: React.FC = () => {
               })}
             </ul>
 
-            <div className="flex justify-end-safe items-center gap-2 border-t border-outline-variant pt-4">
+            <div className="flex justify-end-safe items-center gap-2 pt-4">
               <Button onClick={closeMobileMenu} variant="ghost" className="text-base">
-                Hire Me
+                <p className='text-lg'>Hire Me</p>
               </Button>
               <Button
                 variant="ghost"
