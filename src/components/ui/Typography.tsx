@@ -1,4 +1,5 @@
-import React, { type ElementType, type HTMLAttributes, forwardRef } from 'react'
+/* eslint-disable react-refresh/only-export-components */
+import { type ElementType, type HTMLAttributes, forwardRef } from 'react'
 
 // 1. Variant Map
 export const typographyVariants = {
@@ -100,7 +101,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
       .join(' ')
 
     return (
-      <Component ref={ref as any} className={classes} {...props}>
+      <Component ref={ref as unknown} className={classes} {...props}>
         {children}
       </Component>
     )
