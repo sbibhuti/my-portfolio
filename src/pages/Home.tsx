@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import Button from '../components/ui/Button'
 import Chip from '../components/ui/Chip'
+import { Typography } from '../components/ui/Typography'
 
 const TECH_STACK = [
   { icon: 'JS', label: 'JS/TS', color: 'text-primary' },
@@ -25,11 +26,11 @@ const TECH_STACK = [
 const TRUSTED_BY = [
   {
     name: 'Photon',
-    class: 'text-lg text-on-surface tracking-tighter',
+    class: 'text-on-surface tracking-tighter',
   },
   {
     name: 'Logiciel',
-    class: 'font-mono text-sm text-secondary',
+    class: 'text-secondary',
   },
   {
     name: 'Azentio',
@@ -47,24 +48,45 @@ const Home: React.FC = () => {
       {/* LEFT SIDE */}
       <div className="space-y-8 lg:col-span-7">
         <div className="space-y-2">
-          <span className="text-secondary font-mono text-sm font-bold tracking-[0.2em] uppercase">
+          <Typography
+            as="span"
+            variant="overline"
+            color="secondary"
+            className="font-mono text-sm font-bold tracking-[0.2em]"
+          >
             System.Initialize()
-          </span>
-          <h1 className="font-headline text-5xl leading-none font-black tracking-tighter lg:text-7xl">
-            Building <span className="text-primary italic">Scalable,</span>
+          </Typography>
+          <Typography
+            as="h1"
+            variant="display"
+            className="leading-none font-black tracking-tighter"
+          >
+            Building{' '}
+            <Typography as="span" variant="display" color="primary" className="italic">
+              Scalable,
+            </Typography>
             <br />
-            <span className="text-on-surface font-light tracking-tight">
+            <Typography
+              as="span"
+              variant="display"
+              color="default"
+              className="font-light tracking-tight"
+            >
               High-Performance
-            </span>
+            </Typography>
             <br />
             Web Applications
-          </h1>
+          </Typography>
         </div>
-        <p className="text-on-surface-variant max-w-xl text-lg leading-relaxed">
+        <Typography
+          variant="bodyLarge"
+          color="muted"
+          className="max-w-xl leading-relaxed"
+        >
           Senior Software Engineer specializing in modern JavaScript ecosystems.
           Turning complex technical requirements into elegant, resilient
           codebases.
-        </p>
+        </Typography>
         {/* TAGS */}
         <div className="flex flex-wrap gap-2">
           <Chip
@@ -91,10 +113,10 @@ const Home: React.FC = () => {
         </div>
         {/* BUTTONS */}
         <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-          <Button variant="primary">
+          <Button href='/projects' variant="primary">
             VIEW PROJECTS <ArrowRight size={18} />
           </Button>
-          <Button variant="secondary">
+          <Button href='https://given-magenta-5drbddgzjy.edgeone.app/SSE_resume_Bibhuti.pdf' variant="secondary">
             DOWNLOAD RESUME <Download size={18} />
           </Button>
         </div>
@@ -113,49 +135,85 @@ const Home: React.FC = () => {
                 <div className="window-control-yellow h-3 w-3 rounded-full"></div>
                 <div className="window-control-green h-3 w-3 rounded-full"></div>
               </div>
-              <div className="text-on-surface-variant flex items-center gap-1 font-mono text-[10px]">
+              <Typography
+                as="div"
+                variant="overline"
+                color="muted"
+                className="flex items-center gap-1 font-mono text-[10px]"
+              >
                 <ChevronsLeftRight size={14} />
                 ProfileSummary.tsx
-              </div>
+              </Typography>
               <div className="w-12"></div>
             </div>
             {/* CODE AREA */}
             <div className="space-y-6 p-6 font-mono text-sm">
               <div>
                 <div className="flex gap-4">
-                  <span className="text-outline-variant text-xs">01</span>
+                  <Typography as="span" variant="caption" className="text-outline-variant text-xs">
+                    01
+                  </Typography>
                   <span>
-                    <span className="text-primary">const</span>{' '}
-                    <span className="text-on-surface">engineer</span> ={' {'}
+                    <Typography as="span" variant="bodyMonoSmall" color="primary">
+                      const
+                    </Typography>{' '}
+                    <Typography as="span" variant="bodyMonoSmall" color="default">
+                      engineer
+                    </Typography>{' '}
+                    = {'{'}
                   </span>
                 </div>
                 <div className="flex gap-4">
-                  <span className="text-outline-variant text-xs">02</span>
-                  <span className="text-on-surface-variant pl-4">name:</span>
-                  <span className="text-secondary">'Bibhuti Sunari'</span>
+                  <Typography as="span" variant="caption" className="text-outline-variant text-xs">
+                    02
+                  </Typography>
+                  <Typography as="span" variant="bodyMonoSmall" color="muted" className="pl-4">
+                    name:
+                  </Typography>
+                  <Typography as="span" variant="bodyMonoSmall" color="secondary">
+                    'Bibhuti Sunari'
+                  </Typography>
                 </div>
                 <div className="flex gap-4">
-                  <span className="text-outline-variant text-xs">03</span>
-                  <span className="text-on-surface-variant pl-4">role:</span>
-                  <span className="text-secondary">
+                  <Typography as="span" variant="caption" className="text-outline-variant text-xs">
+                    03
+                  </Typography>
+                  <Typography as="span" variant="bodyMonoSmall" color="muted" className="pl-4">
+                    role:
+                  </Typography>
+                  <Typography as="span" variant="bodyMonoSmall" color="secondary">
                     'Senior Software Engineer'
-                  </span>
+                  </Typography>
                 </div>
                 <div className="flex gap-4">
-                  <span className="text-outline-variant text-xs">04</span>
-                  <span className="text-on-surface-variant pl-4">status:</span>
-                  <span className="text-tertiary">AVAILABLE_FOR_HIRE</span>
+                  <Typography as="span" variant="caption" className="text-outline-variant text-xs">
+                    04
+                  </Typography>
+                  <Typography as="span" variant="bodyMonoSmall" color="muted" className="pl-4">
+                    status:
+                  </Typography>
+                  <Typography as="span" variant="bodyMonoSmall" color="tertiary">
+                    AVAILABLE_FOR_HIRE
+                  </Typography>
                 </div>
                 <div className="flex gap-4">
-                  <span className="text-outline-variant text-xs">05</span>
-                  <span>{'};'}</span>
+                  <Typography as="span" variant="caption" className="text-outline-variant text-xs">
+                    05
+                  </Typography>
+                  <Typography as="span" variant="bodySmall">
+                    {'};'}
+                  </Typography>
                 </div>
               </div>
               {/* TECH STACK */}
               <div className="pt-2">
-                <div className="text-outline-variant mb-3 text-[10px] tracking-widest uppercase">
+                <Typography
+                  as="div"
+                  variant="overline"
+                  className="text-outline-variant mb-3 text-[10px] tracking-widest"
+                >
                   Core_Tech_Stack
-                </div>
+                </Typography>
                 <div className="grid grid-cols-4 gap-4">
                   {TECH_STACK.map((item) => (
                     <div
@@ -169,23 +227,32 @@ const Home: React.FC = () => {
                           {item.icon}
                         </span>
                       </div>
-                      <span className="text-on-surface-variant text-[9px]">
+                      <Typography as="span" variant="caption" color="muted" className="text-[9px]">
                         {item.label}
-                      </span>
+                      </Typography>
                     </div>
                   ))}
                 </div>
               </div>
               {/* TRUSTED BY */}
               <div className="border-outline-variant/10 border-t pt-4">
-                <div className="text-outline-variant mb-4 text-[10px] tracking-widest uppercase">
+                <Typography
+                  as="div"
+                  variant="overline"
+                  className="text-outline-variant mb-4 text-[10px] tracking-widest"
+                >
                   Trusted_By
-                </div>
+                </Typography>
                 <div className="flex flex-wrap items-center gap-6 opacity-70 grayscale transition-all hover:grayscale-0">
                   {TRUSTED_BY.map((item) => (
-                    <span key={item.name} className={`font-bold ${item.class}`}>
+                    <Typography
+                      as="span"
+                      key={item.name}
+                      variant={item.name === 'Photon' ? "bodyMono" : "bodyMonoSmall"}
+                      className={`font-bold ${item.class}`}
+                    >
                       {item.name}
-                    </span>
+                    </Typography>
                   ))}
                 </div>
               </div>
@@ -193,17 +260,21 @@ const Home: React.FC = () => {
             {/* FOOTER */}
             <div className="bg-surface-container-low border-outline-variant/10 flex items-center justify-between border-t px-4 py-1.5 font-mono text-[10px]">
               <div className="flex items-center gap-4">
-                <span className="text-secondary flex items-center gap-1">
+                <Typography as="span" variant="caption" color="secondary" className="flex items-center gap-1">
                   <Network size={12} />
                   main*
-                </span>
-                <span className="text-on-surface-variant flex items-center gap-1">
+                </Typography>
+                <Typography as="span" variant="caption" color="muted" className="flex items-center gap-1">
                   <RefreshCcw size={12} />0
-                </span>
+                </Typography>
               </div>
               <div className="text-on-surface-variant flex items-center gap-4">
-                <span>UTF-8</span>
-                <span>TypeScript JSX</span>
+                <Typography as="span" variant="caption" color="muted">
+                  UTF-8
+                </Typography>
+                <Typography as="span" variant="caption" color="muted">
+                  TypeScript JSX
+                </Typography>
               </div>
             </div>
           </div>

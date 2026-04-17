@@ -14,7 +14,7 @@ const TerminalHeader: React.FC<TerminalHeaderProps> = ({
 }) => {
   return (
     <div
-      className={`bg-surface-container-highest border-outline/20 flex items-center justify-between border-b px-4 py-2 ${className}`}
+      className={`bg-surface-container-highest border-outline/20 flex items-center justify-between px-4 py-2 ${className}`}
     >
       <div className="flex gap-1.5">
         <div className="h-3 w-3 rounded-full bg-[#ff5f56]" />

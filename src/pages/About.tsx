@@ -13,6 +13,7 @@ import {
   SquareTerminal,
   Zap,
 } from 'lucide-react'
+import { Typography } from '../components/ui/Typography'
 
 const DEV_TOOLS: string[] = [
   'ESLint // Veracode',
@@ -34,7 +35,7 @@ const About: React.FC = () => {
   })
 
   return (
-    <main className="mx-auto max-w-7xl space-y-12 px-6 pt-24 pb-12">
+    <main className="sm:mx-auto max-w-7xl space-y-12 px-6 pt-24 pb-12">
       {/* Top Section */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
         {/* Left Bio */}
@@ -42,25 +43,27 @@ const About: React.FC = () => {
           {/* Terminal Header */}
           <TerminalHeader title="ABOUT_SYSTEM.MD" />
           {/* Content */}
-          <div className="space-y-6 p-8">
-            <h1 className="font-headline text-4xl font-black tracking-tight">
+          <div className="space-y-6 p-2 sm:p-8">
+            <Typography as="h1" variant="h1" className="text-4xl font-black tracking-tight">
               ARCHITECTING{' '}
-              <span className="text-primary italic">
+              <Typography as="span" variant="h1" color="primary" className="italic">
                 DIGITAL INFRASTRUCTURE
-              </span>
-            </h1>
+              </Typography>
+            </Typography>
             <div className="text-on-surface-variant font-body space-y-4 leading-relaxed">
-              <p>
+              <Typography as="p" variant="body" color="muted">
                 I am{' '}
-                <span className="text-secondary font-mono">Bibhuti Sunari</span>
+                <Typography as="span" variant="body" color="secondary" className="font-mono">
+                  Bibhuti Sunari
+                </Typography>
                 , a UI-First Full-Stack Engineer focused on performance-first
                 architecture and high-fidelity user interfaces.
-              </p>
-              <p>
+              </Typography>
+              <Typography as="p" variant="body" color="muted">
                 With over 5 years of experience in the ecosystem, I specialize
                 in bridging the gap between complex backend logic and fluid
                 frontend experiences.
-              </p>
+              </Typography>
               <div className="flex flex-wrap gap-3 pt-4">
                 <div className="bg-surface-container-lowest border-outline-variant/10 flex items-center gap-2 rounded border px-3 py-1.5">
                   <MapPin size={12} className="text-primary" />
@@ -88,7 +91,9 @@ const About: React.FC = () => {
                 Lighthouse
               </span>
             </div>
-            <div className="font-headline mb-1 text-3xl font-black">30%</div>
+            <Typography as="div" variant="h2" className="font-headline mb-1 text-3xl font-black">
+              30%
+            </Typography>
             <div className="text-on-surface-variant font-mono text-xs leading-tight tracking-widest uppercase">
               Improved Runtime Performance
             </div>
@@ -101,7 +106,9 @@ const About: React.FC = () => {
                 System
               </span>
             </div>
-            <div className="font-headline mb-1 text-3xl font-black">99.9%</div>
+            <Typography as="div" variant="h2" className="font-headline mb-1 text-3xl font-black">
+              99.9%
+            </Typography>
             <div className="text-on-surface-variant font-mono text-xs leading-tight tracking-widest uppercase">
               Uptime Deployment Target
             </div>
@@ -112,7 +119,9 @@ const About: React.FC = () => {
               <div className="text-tertiary mb-2 font-mono text-xs tracking-[0.2em] uppercase">
                 Active Contributions
               </div>
-              <div className="font-headline text-4xl font-black">1,400+</div>
+              <Typography as="div" variant="h1" className="font-headline text-4xl font-black">
+                1,400+
+              </Typography>
               <div className="text-on-surface-variant mt-1 text-xs">
                 Commits in the last cycle
               </div>
@@ -123,7 +132,7 @@ const About: React.FC = () => {
                 className="text-primary transition-transform group-hover:scale-110"
               />
             </div>
-            <div className="via-primary/5 absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+            <div className="via-primary/5 absolute inset-0 -translate-x-full bg-linear-to-r from-transparent to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
           </div>
         </div>
       </div>
@@ -131,10 +140,10 @@ const About: React.FC = () => {
       <section className="space-y-6">
         {/* SECTION HEADER */}
         <div className="flex items-center gap-4">
-          <h2 className="font-headline text-on-surface text-xl font-black tracking-widest uppercase">
+          <Typography as="h2" variant="h2" className="text-on-surface text-xl font-black tracking-widest uppercase">
             TECHNICAL_ARSENAL
-          </h2>
-          <div className="bg-outline-variant/30 h-[1px] flex-grow" />
+          </Typography>
+          <div className="bg-outline-variant/30 h-px grow" />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {/* CORE TECH */}
@@ -155,7 +164,9 @@ const About: React.FC = () => {
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-primary font-mono text-xs">ReactJS</span>
+                <Typography as="span" variant="caption" color="primary" className="font-mono text-xs">
+                  ReactJS
+                </Typography>
                 <span className="text-on-surface-variant font-mono text-[10px]">
                   L.95
                 </span>
@@ -188,25 +199,33 @@ const About: React.FC = () => {
             </div>
             <div className="space-y-3 p-4">
               <div className="flex justify-between">
-                <span className="font-mono text-xs">Monolithic</span>
+                <Typography as="span" variant="caption" className="font-mono text-xs">
+                  Monolithic
+                </Typography>
                 <span className="text-secondary font-mono text-[10px]">
                   ACTIVE
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="font-mono text-xs">Mono_Repo</span>
+                <Typography as="span" variant="caption" className="font-mono text-xs">
+                  Mono_Repo
+                </Typography>
                 <span className="text-secondary font-mono text-[10px]">
                   ACTIVE
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="font-mono text-xs">SSR_CSR_Hybrid_Apps</span>
+                <Typography as="span" variant="caption" className="font-mono text-xs">
+                  SSR_CSR_Hybrid_Apps
+                </Typography>
                 <span className="text-secondary font-mono text-[10px]">
                   READY
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="font-mono text-xs">Micro_Frontend</span>
+                <Typography as="span" variant="caption" className="font-mono text-xs">
+                  Micro_Frontend
+                </Typography>
                 <span className="text-on-surface-variant font-mono text-[10px]">
                   IDLE
                 </span>
@@ -276,7 +295,9 @@ const About: React.FC = () => {
                 </div>
               ))}
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs">Styled_Components</span>
+                <Typography as="span" variant="caption" className="font-mono text-xs">
+                  Styled_Components
+                </Typography>
                 <div className="flex gap-1">
                   <div className="bg-primary h-2 w-2 rounded-full" />
                   <div className="bg-primary h-2 w-2 rounded-full" />
@@ -311,10 +332,10 @@ const About: React.FC = () => {
       </section>
       {/* GitHub Activity */}
       <div className="bg-surface-container-low border-outline-variant/10 rounded-lg border p-6">
-        <div className="mb-6 flex items-center justify-between">
-          <h3 className="font-mono text-sm font-bold tracking-widest text-white">
+        <div className="mb-6 flex flex-col sm:flex-row items-center justify-between">
+          <Typography as="h3" variant="h3" className="font-mono text-sm font-bold tracking-widest text-white">
             DEPLOYMENT_ACTIVITY
-          </h3>
+          </Typography>
           <div className="text-on-surface-variant flex items-center gap-4 font-mono text-[10px]">
             <div className="flex items-center gap-1">
               <div className="bg-surface-container-high h-2 w-2 rounded" /> Low
@@ -334,7 +355,7 @@ const About: React.FC = () => {
         <div className="flex flex-wrap gap-1.5 overflow-hidden">
           {activityGrid}
         </div>
-        <div className="border-outline-variant/10 mt-4 flex items-center justify-between border-t pt-4">
+        <div className="border-outline-variant/10 mt-4 flex flex-col sm:flex-row items-center justify-between border-t pt-4">
           <div className="text-on-surface-variant font-mono text-[10px]">
             LATEST_PUSH: Merge branch 'feature/auth-bypass' into main [14m ago]
           </div>

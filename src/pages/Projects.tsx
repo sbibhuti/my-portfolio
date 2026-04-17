@@ -5,10 +5,11 @@ import TerminalHeader from '../components/ui/TerminalHeader'
 import SectionTitle from '../components/ui/SectionTitle'
 import Chip from '../components/ui/Chip'
 import Button from '../components/ui/Button'
+import { Typography } from '../components/ui/Typography'
 
 const PortfolioSection: React.FC = () => {
   return (
-    <main className="mx-auto max-w-7xl px-6 pt-24 pb-16">
+    <main className="sm:mx-auto max-w-7xl px-6 pt-24 pb-16">
       {/* Header Section */}
       <SectionTitle
         icon={<SquareTerminal size={12} />}
@@ -19,7 +20,7 @@ const PortfolioSection: React.FC = () => {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* Project 1 */}
-        <div className="group bg-surface border-outline border-l-primary hover:border-primary/40 overflow-hidden rounded-lg border border-l-4 transition-all duration-300 lg:col-span-8">
+        <div className="group bg-surface-container-low/60 border-outline border-l-primary hover:border-primary/40 overflow-hidden rounded-lg border-l-4 transition-all duration-300 lg:col-span-8">
           <TerminalHeader
             title="~/projects/mfund-plus.app"
             icon={
@@ -33,9 +34,9 @@ const PortfolioSection: React.FC = () => {
           />
           <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-2">
             <div>
-              <h3 className="text-on-surface mb-2 text-2xl font-bold">
+              <Typography as="h3" variant="h3" className="text-on-surface mb-2 text-2xl font-bold">
                 Mfund Plus
-              </h3>
+              </Typography>
               <div className="mb-6 flex flex-wrap gap-2">
                 <Chip label="TYPESCRIPT" variant="outline" />
                 <Chip label="POSTGRESQL" variant="primary" />
@@ -43,32 +44,35 @@ const PortfolioSection: React.FC = () => {
               </div>
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-primary mb-1 font-mono text-[10px] font-bold tracking-widest uppercase">
+                  <Typography as="h4" variant="overline" color="primary" className="mb-1 font-mono text-[10px] font-bold">
                     Problem
-                  </h4>
-                  <p className="text-on-surface-variant text-sm">
+                  </Typography>
+                  <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
                     Fragmented financial reporting across multiple mutual fund
                     portfolios causing reconciliation delays.
-                  </p>
+                  </Typography>
                 </div>
                 <div>
-                  <h4 className="text-secondary mb-1 font-mono text-[10px] font-bold tracking-widest uppercase">
+                  <Typography as="h4" variant="overline" color="secondary" className="mb-1 font-mono text-[10px] font-bold">
                     Solution
-                  </h4>
-                  <p className="text-on-surface-variant text-sm">
+                  </Typography>
+                  <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
                     Architected a unified ledger engine with real-time data
                     synchronization and automated audit trails.
-                  </p>
+                  </Typography>
                 </div>
                 <div>
-                  <h4 className="text-tertiary mb-1 font-mono text-[10px] font-bold tracking-widest uppercase">
+                  <Typography as="h4" variant="overline" color="tertiary" className="mb-1 font-mono text-[10px] font-bold">
                     Impact
-                  </h4>
-                  <p className="text-on-surface text-sm font-medium">
+                  </Typography>
+                  <Typography as="p" variant="bodySmall" className="text-sm font-medium">
                     Reduced reporting latency by
-                    <span className="text-secondary font-bold"> 74%</span>
+                    <Typography as="span" variant="bodySmall" color="secondary" className="font-bold">
+                      {' '}
+                      74%
+                    </Typography>
                     and eliminated manual data entry errors.
-                  </p>
+                  </Typography>
                 </div>
               </div>
             </div>
@@ -77,46 +81,60 @@ const PortfolioSection: React.FC = () => {
                 <span className="text-on-surface-variant">
                   Performance_Metrics.json
                 </span>
-                <span className="text-secondary font-bold">READY</span>
+                <Typography as="span" variant="bodySmall" color="secondary" className="font-bold">
+                  READY
+                </Typography>
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-on-surface-variant">Uptime:</span>
-                  <span className="text-on-surface">99.99%</span>
+                  <Typography as="span" variant="bodySmall" color="muted">
+                    Uptime:
+                  </Typography>
+                  <Typography as="span" variant="bodySmall">
+                    99.99%
+                  </Typography>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-on-surface-variant">API_Latency:</span>
-                  <span className="text-secondary font-bold">42ms</span>
+                  <Typography as="span" variant="bodySmall" color="muted">
+                    API_Latency:
+                  </Typography>
+                  <Typography as="span" variant="bodySmall" color="secondary" className="font-bold">
+                    42ms
+                  </Typography>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-on-surface-variant">Active_Nodes:</span>
-                  <span className="text-on-surface">128</span>
+                  <Typography as="span" variant="bodySmall" color="muted">
+                    Active_Nodes:
+                  </Typography>
+                  <Typography as="span" variant="bodySmall">
+                    128
+                  </Typography>
                 </div>
                 <div className="bg-surface-container-high border-outline/50 mt-4 h-2 w-full overflow-hidden rounded-full border">
                   <div className="bg-secondary h-full w-3/4" />
                 </div>
-                <p className="text-on-surface-variant mt-2 text-[10px]">
+                <Typography as="p" variant="caption" color="muted" className="mt-2 text-[10px]">
                   {'// Processing 50k transactions/sec'}
-                </p>
+                </Typography>
               </div>
             </div>
           </div>
         </div>
         {/* Project 2 */}
-        <div className="bg-surface border-outline border-l-secondary hover:border-secondary/40 overflow-hidden rounded-lg border border-l-4 transition-all duration-300 lg:col-span-4">
+        <div className="bg-surface-container-low/60 border-outline border-l-secondary hover:border-secondary/40 overflow-hidden rounded-lg border-l-4 transition-all duration-300 lg:col-span-4">
           <TerminalHeader title="main.py" />
           <div className="flex h-full flex-col p-6">
-            <h3 className="text-on-surface mb-2 text-xl font-bold">
+            <Typography as="h3" variant="h3" className="text-on-surface mb-2 text-xl font-bold">
               Go To Foods
-            </h3>
+            </Typography>
             <div className="mb-4 flex flex-wrap gap-2">
               <Chip label="PYTHON" variant="outline" />
               <Chip label="FASTAPI" variant="outline" />
             </div>
-            <p className="text-on-surface-variant mb-6 line-clamp-3 text-sm">
+            <Typography as="p" variant="bodySmall" color="muted" className="mb-6 line-clamp-3 text-sm">
               A hyper-local delivery optimization engine using advanced
               heuristic routing for small-scale food distributors.
-            </p>
+            </Typography>
             <div className="border-outline mt-auto border-t pt-6">
               <div className="flex items-center justify-between">
                 <span className="text-on-surface-variant font-mono text-[10px] font-bold">
@@ -137,7 +155,7 @@ const PortfolioSection: React.FC = () => {
           </div>
         </div>
         {/* Project 3 */}
-        <div className="bg-surface border-outline border-l-tertiary hover:border-tertiary/40 overflow-hidden rounded-lg border border-l-4 transition-all duration-300 lg:col-span-12">
+        <div className="bg-surface-container-low/60 border-outline border-l-tertiary hover:border-tertiary/40 overflow-hidden rounded-lg border-l-4 transition-all duration-300 lg:col-span-12">
           <TerminalHeader
             title="~/infrastructure/digital-vault"
             icon={<Ellipsis size={14} />}
@@ -145,9 +163,9 @@ const PortfolioSection: React.FC = () => {
           <div className="grid grid-cols-1 gap-8 p-6 lg:grid-cols-3">
             {/* Left Content */}
             <div className="lg:col-span-2">
-              <h3 className="text-on-surface mb-2 text-2xl font-bold">
+              <Typography as="h3" variant="h3" className="text-on-surface mb-2 text-2xl font-bold">
                 Leap to Digital
-              </h3>
+              </Typography>
               <div className="mb-6 flex flex-wrap gap-2">
                 <Chip label="SYSTEM ARCHITECTURE" variant="outline" />
                 <Chip label="CLOUD SECURITY" variant="outline" />
@@ -155,36 +173,36 @@ const PortfolioSection: React.FC = () => {
               </div>
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-primary mb-1 font-mono text-[10px] font-bold tracking-widest uppercase">
+                  <Typography as="h4" variant="overline" color="primary" className="mb-1 font-mono text-[10px] font-bold">
                     Challenge
-                  </h4>
-                  <p className="text-on-surface-variant text-sm">
+                  </Typography>
+                  <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
                     Legacy data systems with poor redundancy and minimal
                     security layers were preventing scale and compliance.
-                  </p>
+                  </Typography>
                 </div>
                 <div>
-                  <h4 className="text-secondary mb-1 font-mono text-[10px] font-bold tracking-widest uppercase">
+                  <Typography as="h4" variant="overline" color="secondary" className="mb-1 font-mono text-[10px] font-bold">
                     Approach
-                  </h4>
-                  <p className="text-on-surface-variant text-sm">
+                  </Typography>
+                  <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
                     Designed a secure multi-cloud data architecture with
                     encrypted pipelines, automated backups, and
                     infrastructure-as-code deployment.
-                  </p>
+                  </Typography>
                 </div>
                 <div>
-                  <h4 className="text-tertiary mb-1 font-mono text-[10px] font-bold tracking-widest uppercase">
+                  <Typography as="h4" variant="overline" color="tertiary" className="mb-1 font-mono text-[10px] font-bold">
                     Result
-                  </h4>
-                  <p className="text-on-surface text-sm font-medium">
+                  </Typography>
+                  <Typography as="p" variant="bodySmall" className="text-sm font-medium">
                     Achieved
-                    <span className="text-secondary font-bold">
+                    <Typography as="span" variant="bodySmall" color="secondary" className="font-bold">
                       {' '}
                       100% uptime
-                    </span>
+                    </Typography>
                     and zero data breaches after migration.
-                  </p>
+                  </Typography>
                 </div>
               </div>
             </div>
@@ -193,7 +211,9 @@ const PortfolioSection: React.FC = () => {
               <div className="bg-surface border-outline mb-4 flex h-16 w-16 items-center justify-center rounded-full border">
                 <ShieldCheck className="text-secondary" size={32} />
               </div>
-              <div className="text-on-surface text-3xl font-bold">100%</div>
+              <Typography as="div" variant="h2" className="text-on-surface text-3xl font-bold">
+                100%
+              </Typography>
               <div className="text-on-surface-variant font-mono text-[10px] tracking-widest uppercase">
                 Data Integrity
               </div>
@@ -202,7 +222,9 @@ const PortfolioSection: React.FC = () => {
                   <span className="text-on-surface-variant">
                     Security_Score
                   </span>
-                  <span className="text-secondary font-bold">A+</span>
+                  <Typography as="span" variant="bodySmall" color="secondary" className="font-bold">
+                    A+
+                  </Typography>
                 </div>
                 <div className="bg-surface-container-high h-1.5 w-full overflow-hidden rounded-full">
                   <div className="bg-secondary h-full w-[98%]"></div>
@@ -214,14 +236,14 @@ const PortfolioSection: React.FC = () => {
       </div>
       {/* Footer CTA */}
       <section className="border-outline mt-20 flex flex-col items-center border-t py-12 text-center">
-        <h3 className="font-headline text-on-surface mb-4 text-2xl font-bold">
+        <Typography as="h3" variant="h3" className="text-on-surface mb-4 text-2xl font-bold">
           Ready to compile your next project?
-        </h3>
-        <p className="text-on-surface-variant mb-8 max-w-md text-sm">
+        </Typography>
+        <Typography as="p" variant="bodySmall" color="muted" className="mb-8 max-w-md text-sm">
           Let's discuss how technical rigor can drive your business impact.
           Available for consulting and architecture roles.
-        </p>
-        <div className="flex gap-4">
+        </Typography>
+        <div className="flex flex-col sm:flex-row gap-4">
           <Button variant="primary" className="font-mono text-sm font-bold">
             <Mail size={14} />
             START_THREAD

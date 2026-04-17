@@ -29,7 +29,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
         </Typography>
       </div>
 
-      <Typography variant="h1" className="mb-4">
+      <Typography variant="h1" className="whitespace-normal wrap-break-word mb-4">
         {title}
       </Typography>
 

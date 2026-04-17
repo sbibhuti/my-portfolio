@@ -4,6 +4,7 @@ import { Dialog } from '@headlessui/react'
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useTheme } from '../../hooks/useTheme'
 import Button from '../ui/Button'
+import { Typography } from '../ui/Typography'
 
 // Example navigation data structure used by desktop and mobile menus.
 const NAV_ITEMS = [
@@ -32,8 +33,8 @@ const Navbar: React.FC = () => {
   }
 
   const handleToggle = () => {
-    closeMobileMenu();
-    toggleTheme();
+    closeMobileMenu()
+    toggleTheme()
   }
 
   useEffect(() => {
@@ -45,12 +46,12 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className="bg-surface-container-low border-outline-variant fixed top-0 z-50 w-full border-b px-4 py-3 md:px-6"
+      className="bg-surface-container-low border-outline-variant fixed top-0 z-50 w-full px-4 py-3 md:px-6"
       aria-label="Primary navigation"
     >
       <div className="relative flex items-center justify-between">
         {/* Logo stays on left across all breakpoints */}
-        
+
         <div className="text-on-surface flex min-w-0 items-center gap-3">
           <div className="h-10 w-10 overflow-hidden rounded-full bg-gray-700 md:h-9 md:w-9">
             <img
@@ -60,9 +61,14 @@ const Navbar: React.FC = () => {
             />
           </div>
           <Link to="/" className="flex items-center gap-3" onClick={closeMobileMenu}>
-            <span className="text-on-background font-mono text-xl font-black tracking-tight">
+            <Typography
+              as="span"
+              variant="h4"
+              color="inherit"
+              className="text-on-background font-mono text-xl font-black tracking-tight"
+            >
               BIBHUTI.SUNARI
-            </span>
+            </Typography>
           </Link>
         </div>
 
@@ -75,8 +81,8 @@ const Navbar: React.FC = () => {
                 <Link
                   to={link.path}
                   className={`font-label group relative pb-1 text-[0.875rem] uppercase transition-colors duration-200 lg:text-[0.9375rem] ${isActive
-                      ? 'text-on-surface'
-                      : 'text-on-surface-variant hover:text-on-surface'
+                    ? 'text-on-surface'
+                    : 'text-on-surface-variant hover:text-on-surface'
                     }`}
                 >
                   {link.label}
@@ -135,9 +141,9 @@ const Navbar: React.FC = () => {
         <div className="fixed inset-0 flex items-start px-0 pt-16">
           <Dialog.Panel
             id="mobile-nav-menu"
-            className={`bg-surface-container-low border-outline-variant max-h-[78vh] w-full overflow-y-auto rounded-b-3xl border border-t-0 px-5 pb-6 pt-5 shadow-2xl transition-all duration-300 ease-out ${isMobileMenuOpen
-                ? 'translate-y-0 opacity-100'
-                : '-translate-y-6 opacity-0'
+            className={`bg-surface-container-low border-outline-variant max-h-[78vh] w-full overflow-y-auto rounded-b-3xl border-0 px-5 pb-6 pt-5 shadow-2xl transition-all duration-300 ease-out ${isMobileMenuOpen
+              ? 'translate-y-0 opacity-100'
+              : '-translate-y-6 opacity-0'
               }`}
           >
 
@@ -150,8 +156,8 @@ const Navbar: React.FC = () => {
                       to={link.path}
                       onClick={closeMobileMenu}
                       className={`block rounded-xl px-4 py-3 text-base uppercase font-mono  transition-all duration-200 ${isActive
-                          ? 'bg-primary/15 text-on-surface font-black'
-                          : 'text-on-surface-variant hover:bg-white/5 hover:text-on-surface font-medium'
+                        ? 'bg-primary/15 text-on-surface font-black'
+                        : 'text-on-surface-variant hover:bg-white/5 hover:text-on-surface font-medium'
                         }`}
                     >
                       {link.label}
@@ -163,7 +169,9 @@ const Navbar: React.FC = () => {
 
             <div className="flex justify-end-safe items-center gap-2 pt-4">
               <Button onClick={closeMobileMenu} variant="ghost" className="text-base">
-                <p className='text-lg'>Hire Me</p>
+                <Typography as="span" variant="bodyLarge" className="text-lg">
+                  Hire Me
+                </Typography>
               </Button>
               <Button
                 variant="ghost"

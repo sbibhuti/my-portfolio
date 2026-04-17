@@ -1,4 +1,5 @@
 import React from 'react'
+import { Typography } from '../components/ui/Typography'
 
 const CaseStudy: React.FC = () => {
   return (
@@ -6,16 +7,21 @@ const CaseStudy: React.FC = () => {
       {/* Case Study Header */}
       <section className="mb-8 md:col-span-12">
         <div className="text-on-surface-variant mb-4 flex items-center gap-3">
-          <span className="material-symbols-outlined text-sm">terminal</span>
+          <Typography as="span" variant="caption" className="material-symbols-outlined text-sm">
+            terminal
+          </Typography>
           <span className="font-mono text-xs tracking-widest uppercase">
             system_log // optimization_task
           </span>
         </div>
 
-        <h1 className="headline text-on-background mb-6 text-4xl leading-none font-black tracking-tighter md:text-6xl">
+        <Typography as="h1" variant="display" className="headline mb-6 leading-none font-black tracking-tighter md:text-6xl">
           Improving Performance in a{' '}
-          <span className="text-primary">Next.js</span> Application
-        </h1>
+          <Typography as="span" variant="display" color="primary">
+            Next.js
+          </Typography>{' '}
+          Application
+        </Typography>
 
         <div className="flex flex-wrap items-center gap-2">
           <span className="bg-surface-container text-on-surface border-outline-variant rounded-full border px-3 py-1 font-mono text-[10px]">
@@ -77,12 +83,16 @@ const CaseStudy: React.FC = () => {
             </div>
 
             <div className="text-on-surface-variant hover:bg-surface-container flex cursor-pointer items-center gap-2 rounded p-2 font-mono text-xs transition-colors">
-              <span className="material-symbols-outlined text-sm">folder</span>
+              <Typography as="span" variant="caption" className="material-symbols-outlined text-sm">
+                folder
+              </Typography>
               IMPLEMENTATION
             </div>
 
             <div className="text-on-surface-variant hover:bg-surface-container flex cursor-pointer items-center gap-2 rounded p-2 font-mono text-xs transition-colors">
-              <span className="material-symbols-outlined text-sm">folder</span>
+              <Typography as="span" variant="caption" className="material-symbols-outlined text-sm">
+                folder
+              </Typography>
               RESULTS
             </div>
           </div>
@@ -94,7 +104,7 @@ const CaseStudy: React.FC = () => {
         {/* Problem Section */}
         <section className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="bg-outline-variant h-px flex-grow"></div>
+            <div className="bg-outline-variant h-px grow"></div>
 
             <span className="text-error px-2 font-mono text-[10px] font-bold tracking-widest uppercase">
               01. The Problem
@@ -117,46 +127,64 @@ const CaseStudy: React.FC = () => {
             </div>
 
             <div className="bg-surface-container space-y-2 p-6 font-mono text-sm leading-relaxed">
-              <p className="text-error flex items-start gap-4">
-                <span className="text-on-surface-variant/40">1</span>
-                <span>[CRITICAL] Lighthouse CI: Performance Score &lt; 40</span>
-              </p>
+              <Typography as="p" variant="bodySmall" color="error" className="flex items-start gap-4">
+                <Typography as="span" variant="caption" className="text-on-surface-variant/40">
+                  1
+                </Typography>
+                <Typography as="span" variant="bodySmall">
+                  [CRITICAL] Lighthouse CI: Performance Score &lt; 40
+                </Typography>
+              </Typography>
 
-              <p className="text-on-surface-variant/40 flex items-start gap-4">
-                <span className="text-on-surface-variant/40">2</span>
-                <span>---</span>
-              </p>
+              <Typography as="p" variant="bodySmall" className="text-on-surface-variant/40 flex items-start gap-4">
+                <Typography as="span" variant="caption" className="text-on-surface-variant/40">
+                  2
+                </Typography>
+                <Typography as="span" variant="bodySmall">
+                  ---
+                </Typography>
+              </Typography>
 
-              <p className="text-on-surface flex items-start gap-4">
-                <span className="text-on-surface-variant/40">3</span>
-                <span>Main thread blocked for 1.2s during hydration.</span>
-              </p>
+              <Typography as="p" variant="bodySmall" className="flex items-start gap-4">
+                <Typography as="span" variant="caption" className="text-on-surface-variant/40">
+                  3
+                </Typography>
+                <Typography as="span" variant="bodySmall">
+                  Main thread blocked for 1.2s during hydration.
+                </Typography>
+              </Typography>
 
-              <p className="text-on-surface flex items-start gap-4">
-                <span className="text-on-surface-variant/40">4</span>
-                <span>Excessive DOM size detected: 3,400 elements.</span>
-              </p>
+              <Typography as="p" variant="bodySmall" className="flex items-start gap-4">
+                <Typography as="span" variant="caption" className="text-on-surface-variant/40">
+                  4
+                </Typography>
+                <Typography as="span" variant="bodySmall">
+                  Excessive DOM size detected: 3,400 elements.
+                </Typography>
+              </Typography>
 
-              <p className="text-tertiary flex items-start gap-4">
-                <span className="text-on-surface-variant/40">5</span>
+              <Typography as="p" variant="bodySmall" color="tertiary" className="flex items-start gap-4">
+                <Typography as="span" variant="caption" className="text-on-surface-variant/40">
+                  5
+                </Typography>
                 <span>
                   [WARN] Unused JS chunks found in initial payload (840KB).
                 </span>
-              </p>
+              </Typography>
             </div>
           </div>
 
-          <p className="text-on-surface-variant max-w-2xl text-sm leading-relaxed">
+          <Typography as="p" variant="bodySmall" color="muted" className="max-w-2xl text-sm leading-relaxed">
             The initial audit revealed significant bottlenecks in the user
             journey. The application was suffering from high First Contentful
             Paint (FCP) and heavy JavaScript execution times, resulting in a
             sluggish mobile experience.
-          </p>
+          </Typography>
         </section>
 
         <section className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="bg-outline-variant h-px flex-grow"></div>
+            <div className="bg-outline-variant h-px grow"></div>
 
             <span className="text-primary px-2 font-mono text-[10px] font-bold tracking-widest uppercase">
               02. Implementation
@@ -190,7 +218,7 @@ const CaseStudy: React.FC = () => {
 
                                 const HeavyComponent = dynamic(
                                 () => import("../components/HeavyComponent"),
-                                { loading: () => <p>Loading...</p> }
+                                { loading: () => <Typography as="p">Loading...</Typography> }
                                 )
 
                                 // Image optimization
@@ -208,17 +236,17 @@ const CaseStudy: React.FC = () => {
             </div>
           </div>
 
-          <p className="text-on-surface-variant max-w-2xl text-sm leading-relaxed">
+          <Typography as="p" variant="bodySmall" color="muted" className="max-w-2xl text-sm leading-relaxed">
             We reduced the JavaScript bundle by implementing dynamic imports and
             lazy loading for heavy components. Image optimization with Next.js
             and Brotli compression further reduced payload size and improved
             rendering performance.
-          </p>
+          </Typography>
         </section>
 
         <section className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="bg-outline-variant h-px flex-grow"></div>
+            <div className="bg-outline-variant h-px grow"></div>
 
             <span className="text-secondary px-2 font-mono text-[10px] font-bold tracking-widest uppercase">
               03. Performance Metrics
@@ -230,41 +258,41 @@ const CaseStudy: React.FC = () => {
           <div className="grid gap-6 md:grid-cols-3">
             {/* Metric Card */}
             <div className="bg-surface-container border-outline-variant space-y-2 rounded-lg border p-6">
-              <p className="text-on-surface-variant font-mono text-xs uppercase">
+              <Typography as="p" variant="caption" color="muted" className="font-mono text-xs uppercase">
                 Lighthouse Score
-              </p>
+              </Typography>
 
-              <h3 className="text-primary text-3xl font-bold">94</h3>
+              <Typography as="h3" variant="h3" color="primary" className="text-3xl font-bold">94</Typography>
 
-              <p className="text-on-surface-variant text-xs">
+              <Typography as="p" variant="caption" color="muted" className="text-xs">
                 Improved from 38 after optimizations
-              </p>
+              </Typography>
             </div>
 
             {/* Metric Card */}
             <div className="bg-surface-container border-outline-variant space-y-2 rounded-lg border p-6">
-              <p className="text-on-surface-variant font-mono text-xs uppercase">
+              <Typography as="p" variant="caption" color="muted" className="font-mono text-xs uppercase">
                 First Contentful Paint
-              </p>
+              </Typography>
 
-              <h3 className="text-secondary text-3xl font-bold">1.1s</h3>
+              <Typography as="h3" variant="h3" color="secondary" className="text-3xl font-bold">1.1s</Typography>
 
-              <p className="text-on-surface-variant text-xs">
+              <Typography as="p" variant="caption" color="muted" className="text-xs">
                 Reduced from 3.4s
-              </p>
+              </Typography>
             </div>
 
             {/* Metric Card */}
             <div className="bg-surface-container border-outline-variant space-y-2 rounded-lg border p-6">
-              <p className="text-on-surface-variant font-mono text-xs uppercase">
+              <Typography as="p" variant="caption" color="muted" className="font-mono text-xs uppercase">
                 Bundle Size
-              </p>
+              </Typography>
 
-              <h3 className="text-tertiary text-3xl font-bold">−62%</h3>
+              <Typography as="h3" variant="h3" color="tertiary" className="text-3xl font-bold">−62%</Typography>
 
-              <p className="text-on-surface-variant text-xs">
+              <Typography as="p" variant="caption" color="muted" className="text-xs">
                 From 840KB → 320KB
-              </p>
+              </Typography>
             </div>
           </div>
           {/* Summary + Conclusion */}
@@ -281,12 +309,12 @@ const CaseStudy: React.FC = () => {
                 </span>
               </div>
 
-              <p className="text-on-surface-variant text-sm leading-relaxed">
+              <Typography as="p" variant="bodySmall" color="muted" className="text-sm leading-relaxed">
                 Performance improvements were achieved through bundle reduction,
                 dynamic imports, and optimized image delivery. The changes
                 resulted in significantly faster page load times and smoother
                 user interactions across mobile and desktop environments.
-              </p>
+              </Typography>
             </div>
 
             {/* Conclusion */}
@@ -301,12 +329,12 @@ const CaseStudy: React.FC = () => {
                 </span>
               </div>
 
-              <p className="text-on-surface-variant text-sm leading-relaxed">
+              <Typography as="p" variant="bodySmall" color="muted" className="text-sm leading-relaxed">
                 By focusing on performance-first architecture, the application
                 achieved production-grade performance metrics while maintaining
                 scalability. The improvements also ensured better SEO rankings
                 and higher Lighthouse scores.
-              </p>
+              </Typography>
             </div>
           </div>
         </section>

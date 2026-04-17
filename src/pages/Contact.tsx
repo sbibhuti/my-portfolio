@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react'
 import TerminalHeader from '../components/ui/TerminalHeader'
 import InputField from '../components/ui/InputField'
 import Button from '../components/ui/Button'
+import { Typography } from '../components/ui/Typography'
 import {
   CircleCheck,
   EthernetPort,
@@ -45,35 +46,64 @@ export default function ContactPage() {
         <div className="flex flex-col gap-4 md:col-span-4">
           {/* CONTACT INFO */}
           <div className="bg-surface-container-low border-outline-variant/20 rounded-md border p-6">
-            <h2 className="text-primary mb-4 font-mono text-xs tracking-widest">
+            <Typography
+              as="h2"
+              variant="sectionTitle"
+              color="primary"
+              className="mb-4 font-mono text-xs"
+            >
               // DIRECT_CONTACT
-            </h2>
+            </Typography>
             <div className="space-y-6">
               <div>
-                <p className="text-on-surface-variant font-mono text-[11px] tracking-tight uppercase">
+                <Typography
+                  as="p"
+                  variant="caption"
+                  color="muted"
+                  className="font-mono text-[11px] tracking-tight uppercase"
+                >
                   Email
-                </p>
-                <p className="text-secondary font-mono text-sm">
+                </Typography>
+                <Typography as="p" variant="bodySmall" color="secondary" className="font-mono text-sm">
                   bibhutisunari11@gmail.com
-                </p>
+                </Typography>
               </div>
               <div>
-                <p className="text-on-surface-variant font-mono text-[11px] tracking-tight uppercase">
+                <Typography
+                  as="p"
+                  variant="caption"
+                  color="muted"
+                  className="font-mono text-[11px] tracking-tight uppercase"
+                >
                   Phone
-                </p>
-                <p className="font-mono text-sm">+91 (845) 794-7365</p>
+                </Typography>
+                <Typography as="p" variant="bodySmall" className="font-mono text-sm">
+                  +91 (845) 794-7365
+                </Typography>
               </div>
               <div>
-                <p className="text-on-surface-variant font-mono text-[11px] tracking-tight uppercase">
+                <Typography
+                  as="p"
+                  variant="caption"
+                  color="muted"
+                  className="font-mono text-[11px] tracking-tight uppercase"
+                >
                   Location
-                </p>
-                <p className="font-mono text-sm">Odisha, India [GMT+5:30]</p>
+                </Typography>
+                <Typography as="p" variant="bodySmall" className="font-mono text-sm">
+                  Odisha, India [GMT+5:30]
+                </Typography>
               </div>
               {/* SOCIAL */}
               <div className="border-outline-variant/20 border-t pt-4">
-                <p className="text-on-surface-variant mb-3 font-mono text-[11px] tracking-tight uppercase">
+                <Typography
+                  as="p"
+                  variant="caption"
+                  color="muted"
+                  className="mb-3 font-mono text-[11px] tracking-tight uppercase"
+                >
                   Social.sys
-                </p>
+                </Typography>
                 <div className="flex gap-2">
                   <Link2
                     size={20}
@@ -99,10 +129,15 @@ export default function ContactPage() {
               </span>
               <Info className="text-secondary" size={11} />
             </div>
-            <p className="text-secondary font-mono text-[12px] leading-relaxed">
+            <Typography
+              as="p"
+              variant="bodySmall"
+              color="secondary"
+              className="font-mono text-[12px] leading-relaxed"
+            >
               Ready to process new connection requests. Latency: 12ms. Status:
               Open for collaborations.
-            </p>
+            </Typography>
           </div>
         </div>
         {/* CONTACT FORM */}
@@ -112,7 +147,7 @@ export default function ContactPage() {
             <TerminalHeader
               title="contact_request.json"
               icon={
-                <span className="material-symbols-outlined text-primary mr-2 text-sm">
+                <span className="material-symbols-outlined hidden sm:flex text-primary mr-2 text-sm">
                   {'[UTF-8]'}
                 </span>
               }
@@ -120,13 +155,13 @@ export default function ContactPage() {
             {/* FORM BODY */}
             <div className="p-8">
               <div className="mb-8">
-                <h1 className="text-on-surface mb-2 text-2xl font-bold">
+                <Typography as="h1" variant="h2" className="mb-2 text-2xl font-bold">
                   Initialize Connection
-                </h1>
-                <p className="text-primary text-sm">
+                </Typography>
+                <Typography as="p" variant="bodySmall" color="primary" className="text-sm">
                   Submit a structured request to initiate a technical discussion
                   or inquiry.
-                </p>
+                </Typography>
               </div>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -136,6 +171,7 @@ export default function ContactPage() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="e.g. John Doe"
+                    required
                   />
                   <InputField
                     label="User.Email"
@@ -144,6 +180,7 @@ export default function ContactPage() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="e.g. john@example.com"
+                    required
                   />
                 </div>
                 <InputField
@@ -152,6 +189,7 @@ export default function ContactPage() {
                   value={form.subject}
                   onChange={handleChange}
                   placeholder="Specify context (Project, Hire, Coffee)"
+                  required
                 />
                 <InputField
                   as="textarea"
@@ -161,6 +199,7 @@ export default function ContactPage() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Enter your detailed message here..."
+                  required
                 />
                 {/* SUBMIT */}
                 <div className="flex justify-end pt-4">
@@ -175,20 +214,20 @@ export default function ContactPage() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1.5">
                   <CircleCheck className="text-secondary" size={14} />
-                  <span className="text-on-surface-variant font-mono text-[11px]">
+                  <Typography as="span" variant="caption" color="muted" className="font-mono text-[11px]">
                     Validated
-                  </span>
+                  </Typography>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Lock className="text-primary" size={14} />
-                  <span className="text-on-surface-variant font-mono text-[11px]">
+                  <Typography as="span" variant="caption" color="muted" className="font-mono text-[11px]">
                     Encrypted
-                  </span>
+                  </Typography>
                 </div>
               </div>
-              <span className="text-on-surface-variant/60 font-mono text-[11px]">
+              <Typography as="span" variant="caption" className="text-on-surface-variant/60 font-mono text-[11px]">
                 v2.4.0-stable
-              </span>
+              </Typography>
             </div>
           </div>
         </div>

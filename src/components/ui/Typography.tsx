@@ -13,8 +13,11 @@ export const typographyVariants = {
   bodyLarge: 'font-sans text-lg',
   body: 'font-sans text-base',
   bodySmall: 'font-sans text-sm',
-  caption: 'font-sans text-xs',
-  overline: 'font-mono text-[10px] uppercase tracking-widest',
+  bodyMonoLarge: 'font-label text-lg',
+  bodyMono: 'font-label text-base',
+  bodyMonoSmall: 'font-label text-sm',
+  caption: 'font-label text-xs',
+  overline: 'font-mono uppercase tracking-widest',
   code: 'font-mono text-sm font-bold bg-surface-container border border-outline rounded px-1.5 py-0.5',
 }
 
@@ -57,6 +60,9 @@ const defaultTags: Record<keyof typeof typographyVariants, ElementType> = {
   bodyLarge: 'p',
   body: 'p',
   bodySmall: 'p',
+  bodyMonoLarge: 'p',
+  bodyMono: 'p',
+  bodyMonoSmall: 'p',
   caption: 'span',
   overline: 'span',
   code: 'code',
