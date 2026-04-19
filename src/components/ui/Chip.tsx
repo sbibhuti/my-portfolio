@@ -3,12 +3,12 @@ import React from 'react'
 interface ChipProps {
   label: string
   variant?:
-    | 'default'
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'outline'
-    | 'label'
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'outline'
+  | 'label'
   casing?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
   className?: string
   icon?: React.ReactNode
@@ -57,7 +57,7 @@ const Chip: React.FC<ChipProps> = ({
       className={`inline-flex items-center justify-center gap-1.5 rounded border px-2 py-0.5 tracking-[0.05em] transition-all duration-200 md:px-3 md:py-1 ${appliedCasing} ${variantClasses} ${className}`}
     >
       {icon && (
-        <span className="flex items-center justify-center text-[inherit] [&>svg]:h-3 [&>svg]:w-3">
+        <span className="flex items-center justify-center text-inherit [&>svg]:h-3 [&>svg]:w-3">
           {icon}
         </span>
       )}

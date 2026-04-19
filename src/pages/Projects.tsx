@@ -15,7 +15,7 @@ const PortfolioSection: React.FC = () => {
         icon={<SquareTerminal size={12} />}
         subtitle="System.Output / Portfolio"
         title="ENGINEERED_SOLUTIONS"
-        description="A curated selection of high-impact technical architectures, full-stack implementations, and digital transformation initiatives. Optimized for performance, scale, and user experience."
+        description="A curated selection of high-impact technical architectures, UI implementations, and digital transformation initiatives. Optimized for performance, scale, and user experience."
       />
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
@@ -32,24 +32,27 @@ const PortfolioSection: React.FC = () => {
               </Link>
             }
           />
-          <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-2">
+          <div className='p-6 pb-0'>
+            <Typography as="h3" variant="h3" className="text-on-surface mb-2 text-2xl font-bold">
+              Mfund Plus
+            </Typography>
+            <div className="mb-6 flex flex-wrap gap-2">
+              <Chip label="ANT_DESIGN" variant="outline" />
+              <Chip label="VIRTUALIZE" variant="primary" />
+              <Chip label="REACT.JS" variant="outline" />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-8 p-6 pt-0 md:grid-cols-2">
             <div>
-              <Typography as="h3" variant="h3" className="text-on-surface mb-2 text-2xl font-bold">
-                Mfund Plus
-              </Typography>
-              <div className="mb-6 flex flex-wrap gap-2">
-                <Chip label="TYPESCRIPT" variant="outline" />
-                <Chip label="POSTGRESQL" variant="primary" />
-                <Chip label="NEXT.JS" variant="outline" />
-              </div>
               <div className="space-y-4">
                 <div>
                   <Typography as="h4" variant="overline" color="primary" className="mb-1 font-mono text-[10px] font-bold">
                     Problem
                   </Typography>
                   <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
-                    Fragmented financial reporting across multiple mutual fund
-                    portfolios causing reconciliation delays.
+                    Large volumes of API data displayed in the Ant Design Table
+                    caused slow initial loading and laggy pagination in the MfundPlus application,
+                    leading to poor UI responsiveness.
                   </Typography>
                 </div>
                 <div>
@@ -57,8 +60,8 @@ const PortfolioSection: React.FC = () => {
                     Solution
                   </Typography>
                   <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
-                    Architected a unified ledger engine with real-time data
-                    synchronization and automated audit trails.
+                    Implemented client-side caching using IndexedDB, integrated paginated data loading into Redux state management,
+                    and applied table virtualization to render only visible rows.
                   </Typography>
                 </div>
                 <div>
@@ -66,12 +69,11 @@ const PortfolioSection: React.FC = () => {
                     Impact
                   </Typography>
                   <Typography as="p" variant="bodySmall" className="text-sm font-medium">
-                    Reduced reporting latency by
+                    Improved data load performance and pagination speed
                     <Typography as="span" variant="bodySmall" color="secondary" className="font-bold">
-                      {' '}
-                      74%
+                      &nbsp;by 54%,&nbsp;
                     </Typography>
-                    and eliminated manual data entry errors.
+                    resulting in a smoother user experience and a scalable approach for handling large datasets.
                   </Typography>
                 </div>
               </div>
@@ -128,12 +130,16 @@ const PortfolioSection: React.FC = () => {
               Go To Foods
             </Typography>
             <div className="mb-4 flex flex-wrap gap-2">
-              <Chip label="PYTHON" variant="outline" />
-              <Chip label="FASTAPI" variant="outline" />
+              <Chip label="NEXT.JS" variant="outline" />
+              <Chip label="STORYBOOK" variant="secondary" />
+              <Chip label="CMS" variant="outline" />
             </div>
-            <Typography as="p" variant="bodySmall" color="muted" className="mb-6 line-clamp-3 text-sm">
-              A hyper-local delivery optimization engine using advanced
-              heuristic routing for small-scale food distributors.
+            <Typography as="p" variant="bodySmall" color="muted" className="mb-6 line-clamp-7 text-sm">
+              Go To Foods is a multi-brand online food ordering platform built with Next.js using a monorepo architecture
+              to manage 6–7 different brand applications within a single codebase.
+              The platform follows a hybrid rendering approach combining SSR and CSR for optimal performance and SEO.
+              Reusable UI components were developed and documented using Storybook,
+              while brand-specific design tokens were generated using Tailwind CSS to maintain consistent theming across brands.
             </Typography>
             <div className="border-outline mt-auto border-t pt-6">
               <div className="flex items-center justify-between">
@@ -141,7 +147,7 @@ const PortfolioSection: React.FC = () => {
                   IMPACT
                 </span>
                 <span className="text-secondary text-sm font-bold">
-                  +12% Profit Margin
+                  +16% Added User
                 </span>
               </div>
               <div className="border-outline bg-surface-container mt-4 h-24 w-full overflow-hidden rounded border">
@@ -168,8 +174,8 @@ const PortfolioSection: React.FC = () => {
               </Typography>
               <div className="mb-6 flex flex-wrap gap-2">
                 <Chip label="SYSTEM ARCHITECTURE" variant="outline" />
-                <Chip label="CLOUD SECURITY" variant="outline" />
-                <Chip label="DATA MIGRATION" variant="outline" />
+                <Chip label="MICRO FRONTEND" variant="tertiary" />
+                <Chip label="OPTIMIZATION" variant="outline" />
               </div>
               <div className="space-y-4">
                 <div>
@@ -177,8 +183,10 @@ const PortfolioSection: React.FC = () => {
                     Challenge
                   </Typography>
                   <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
-                    Legacy data systems with poor redundancy and minimal
-                    security layers were preventing scale and compliance.
+                    The Leap to Digital initiative required modernizing multiple legacy systems and integrating
+                    diverse suppliers into a single scalable platform while supporting different user roles.
+                    The growing codebase and team collaboration also demanded a more modular architecture
+                    to maintain performance and development speed.
                   </Typography>
                 </div>
                 <div>
@@ -186,9 +194,9 @@ const PortfolioSection: React.FC = () => {
                     Approach
                   </Typography>
                   <Typography as="p" variant="bodySmall" color="muted" className="text-sm">
-                    Designed a secure multi-cloud data architecture with
-                    encrypted pipelines, automated backups, and
-                    infrastructure-as-code deployment.
+                    Implemented a Micro Frontend architecture using React with Webpack Module Federation to enable
+                    independent deployments and shared dependencies. Built reusable components, applied lazy loading,
+                    responsive UI with Tailwind CSS, and enforced structured workflows through GitHub.
                   </Typography>
                 </div>
                 <div>
@@ -196,12 +204,12 @@ const PortfolioSection: React.FC = () => {
                     Result
                   </Typography>
                   <Typography as="p" variant="bodySmall" className="text-sm font-medium">
-                    Achieved
+                    Reduced bundle size by
                     <Typography as="span" variant="bodySmall" color="secondary" className="font-bold">
-                      {' '}
-                      100% uptime
+                      &nbsp; 20% and improved &nbsp;
                     </Typography>
-                    and zero data breaches after migration.
+                    development efficiency through independent team deployments. The modular architecture enhanced application
+                    performance, scalability, and ensured reliable, bug-free releases.
                   </Typography>
                 </div>
               </div>

@@ -210,7 +210,7 @@ export default function ContactPage() {
               </form>
             </div>
             {/* FOOTER */}
-            <div className="bg-surface-container-low border-outline-variant/20 flex items-center justify-between border-t px-8 py-3">
+            <div className="bg-surface-container-low border-outline-variant/20 flex items-center justify-between border-t px-3 sm:px-8 py-3">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1.5">
                   <CircleCheck className="text-secondary" size={14} />
